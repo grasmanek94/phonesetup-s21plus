@@ -188,6 +188,12 @@ function ADB-Change-Settings {
         # select tiles in extra dropdown
         sysui_qs_tiles="SoundMode,RotationLock,AirplaneMode,Flashlight,MobileData,Hotspot,Location,custom(com.samsung.android.app.smartcapture/com.samsung.android.app.screenrecorder.view.RecordScreenTile),Dnd,custom(com.shazam.android/com.shazam.popup.android.service.FloatingShazamTileService),custom(com.wireguard.android/.QuickTileService)"
         sysui_removed_qs_tiles="custom(com.sec.unifiedwfc/.ux.quicksettings.WFCQSTileService),custom(com.sec.android.app.camera/.service.QrTileService),custom(com.samsung.android.lool/com.samsung.android.sm.battery.ui.mode.BatteryModeTile)"
+        
+        # autofill
+        autofill_service="keepass2android.keepass2android/keepass2android.services.Kp2aAutofillService" # setup KP2A as autofill
+        credential_service="com.google.android.gms/com.google.android.gms.auth.api.credentials.credman.service.PasswordAndPasskeyService"
+        
+        media_button_receiver="com.spotify.music/com.spotify.mediasession.mediasession.receiver.MediaButtonReceiver,0,1"
     }
 
     ADB-Change-Service -Key nfc -Value disable # turn off nfc

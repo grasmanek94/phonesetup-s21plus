@@ -266,3 +266,39 @@
 -- Disable: use The Android default vibration
 - Privacy:
 -- Disable ALL
+
+[Spotify]
+- Log in
+- Profile icon
+- Settings and privacy
+- Data Saver: +Download Audio Only, +Stream audio only
+- Playback: Show unplayable songs, disable 'Canvas'
+- Devices: Disable Spotify Connect in background
+- Navigation: Disable ALL
+- Video Qualit: All low
+- Storage: Enable offline listening
+- Notifications: ALL OFF
+- Local files: Show audio files from this device
+- Spotify app settings: Disable picture-in-picture
+- Disable remove permissions if app is unused
+
+[Clock]
+- Setup alarms
+- Settings
+- Upcoming alarm notification: 15m
+- Disable: Show weather
+- Enable: vibration (Timer)
+
+[Gallery]
+- Settings
+- Disable: Auto play motion photos, Select essential albums, Merge albums
+
+[Authenticator Pro]
+- Burger menu
+- Settings
+- Enable: Skip to Next, System Font
+- Theme: Black Theme
+- View Mode: Tile
+- Add all authenticator secrets
+
+
