@@ -1,0 +1,5 @@
+firmware/
+settingscompare/.git
+settingscompare/global_before.txt
+settingscompare/secure_before.txt
+settingscompare/system_before.txt

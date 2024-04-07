@@ -1,0 +1,24 @@
+
+To find out name of some system setting you can use this technique:
+
+Export all settings from the device:
+
+adb shell settings list global > global_before.txt 
+adb shell settings list system > system_before.txt 
+adb shell settings list secure > secure_before.txt
+
+Change the wanted setting in Settings application
+
+Export all settings from the device again:
+
+adb shell settings list global > global_after.txt 
+adb shell settings list system > system_after.txt 
+adb shell settings list secure > secure_after.txt
+
+Compare the before/after files and the single change you will find will be your setting.
+
+adb shell "su -c settings put secure 'sleep_timeout' '-1'"
+adb shell "su -c settings get secure 'sleep_timeout'"
+
+
+adb shell "su -c settings put system 'nearby_scanning_enabled' '0'"

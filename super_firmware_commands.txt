@@ -1,0 +1,94 @@
+lz4 -d super.img.lz4 super.img
+
+simg2img super.img super_raw.img
+
+./bin/lpdump -j super_raw.img # get info about which partitions there are.. so dump all of them (below)
+./bin/lpunpack --partition=system super_raw.img
+./bin/lpunpack --partition=vendor super_raw.img
+./bin/lpunpack --partition=product super_raw.img
+./bin/lpunpack --partition=odm super_raw.img
+
+fallocate -l 8G ~/system.img # allocate more space on partition
+resize2fs ~/system.img 8G # resize fs on partition
+
+mkdir /mnt/android-system # create mount dir
+sudo mount -t ext4 -o loop ~/system.img /mnt/android-system # mount image
+echo "do changes here" # do changes
+sudo umount /mnt/android-system # unmount
+e2fsck -yf ~/system.img # fix fs
+resize2fs -M ~/system.img # shrink to minimum
+e2fsck -yf ~/system.img # fix again
+mv ~/system.img ./
+-----------------------------------
+
+***DO NOT COPY, READ INSTRUCTIONS BELOW!!***
+./bin/lpmake --metadata-size 65536 --super-name super --metadata-slots 1 --device super:11429478400 --group group_basic:9813282816 --partition system:readonly:6756331520:group_basic --image system=./system.img --partition vendor:readonly:1645256704:group_basic --image vendor=./vendor.img --partition product:readonly:1407344640:group_basic --image product=./product.img --partition odm:readonly:4349952:group_basic --image odm=./odm.img --output ./super.new.img --sparse 
+
+lz4 -B6 --content-size super.new.img super.img.lz4
+
+#
+# explanation:
+# 1) --metadata-size: The maximum size that partition metadata may consume. A partition entry uses 64 bytes and an extent entry uses 16 bytes. I think 65536 should work in most cases.
+# 
+# 2) --metadata-slots - The number of slots available for storing metadata. This should match the number of update slots on the device, 2 for A/B devices and 1 for non-A/B.
+# 
+# 3)--device super: The size of the “super” partition on the device. It must match exactly, and it must be evenly divisible by the sector size (512 bytes).
+# 
+# 4) --group main:4293513600: sum of all partitions files sizes
+# 
+# 5) --partition system:readonly:1577095168:main --image system=./system.img : Every parition file size with permissions(readonly) and input img file
+# --partition system:readonly:0123456:group_basic --image system=./system.img 
+# --partition vendor:readonly:0123456:group_basic --image vendor=./vendor.img 
+# --partition product:readonly:0123456:group_basic --image product=./product.img 
+# --partition odm:readonly:0123456:group_basic --image odm=./odm.img 
+
+
+
+
+-------------------------------------
+./bin/lpdump -j super_raw.img
+{
+ "partitions": [
+  {
+   "name": "system",
+   "group_name": "group_basic",
+   "is_dynamic": true,
+   "size": "6758195200"
+  },
+  {
+   "name": "vendor",
+   "group_name": "group_basic",
+   "is_dynamic": true,
+   "size": "1645256704"
+  },
+  {
+   "name": "product",
+   "group_name": "group_basic",
+   "is_dynamic": true,
+   "size": "1407344640"
+  },
+  {
+   "name": "odm",
+   "group_name": "group_basic",
+   "is_dynamic": true,
+   "size": "4349952"
+  }
+ ],
+ "groups": [
+  {
+   "name": "default"
+  },
+  {
+   "name": "group_basic",
+   "maximum_size": "11425284096"
+  }
+ ],
+ "block_devices": [
+  {
+   "name": "super",
+   "size": "11429478400",
+   "block_size": "4096",
+   "alignment": "1048576"
+  }
+ ]
+}

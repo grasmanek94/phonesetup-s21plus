@@ -1,0 +1,41 @@
+adb shell settings put secure icon_blacklist nfc,bluetooth && adb reboot
+
+Note the lack of space between the NFC and Bluetooth commands.
+
+That's it; Done!
+
+Enjoy a less cluttered status bar!
+
+Edit:
+Omar302 reminded me that you can hide other status bar icons using this method. This is a (likely incomplete) list of icons
+
+Code:
+Name		Settings Description
+cast		Cast
+hotspot		Hotspot
+bluetooth	Bluetooth
+zen		Do not disturb
+alarm_clock	Alarm 
+managed_profile	Work profile
+wifi		Wi-Fi
+ethernet	Ethernet
+mobile		Cellular Data
+airplane	Airplane Mode
+   power_saver
+    rotate
+    headset
+    hotspot
+    location
+    gps
+    wearable_gear
+    bluetooth
+    nfc
+    zen
+    volume
+    wifi
+    data_connection 
+    phone_signal
+    battery
+    alarm_clock
+    clock
+    private_mode

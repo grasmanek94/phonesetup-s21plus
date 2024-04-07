@@ -1,0 +1,268 @@
+[Initial Setup]
+- Start
+- Language English (US), next
+- Agree only to EULA, next
+- Set-up manually
+- Select Wi-Fi, connect
+- Provider Setup - Restart (will fail, continue [next])
+- Don't copy
+- Login, confirm 2fa, I agree
+- Disable not needed options, next,
+- Select search engine, next
+- Pin, input six digits, reselect unlock without ok, remove 2 digits
+- Skip, Skip, "Forgot password or don't have an account?", "Set up later in settings", Skip
+- Deselect all samsung services, agree
+- Dark, Next
+- Finish
+
+[Finish setting up your device notification]
+- Setup manually
+- Don't copy
+- Next
+- Accept
+- Skip
+- Skip
+- "Forgot password or don't have an account", "setup later in settings", Skip
+
+[Homescreen]
+- Remove all icons, weather, search bar etc, except quick apps on bottom
+- Hold empty space for settings of home screen and apps
+- Home screen grid 5x6
+- Repeat for apps screen grid 5x6
+- Hold again
+- Disable feed to left
+- Remove all right screens
+- Swipe down notification screen
+- Disable auto rotate
+
+[Dev options]
+- Go to settings
+- About phone
+- Software information
+- Tap build nr 7 times
+- Confirm with pin
+- Go to settings
+- Developer options
+- Enable USB debugging, OK, always allow from this computer, allow
+- Enable option: Disable adb authorization timeout
+- Disable option: Verify apps over USB
+- Verify bytecode of debuggable apps
+- Window, Transition and Animator duration scale: .5 (makes phone feel more responsive)
+- Disable option: Stylus handwriting
+
+[Apps setup]
+- Run setup_phone.ps1
+
+[Magisk]
+- Copy os/modules to internal storage/Download/modules
+- Open magisk app
+- Additional setup: OK
+- Settings
+- Hide the magisk App and do the steps
+- Settings
+- Enable zygisk
+- Configure DenyList (select all apps except apps that need root, including show system apps)
+- Superuser notification: None
+- Back
+- Modules
+- Install all copied modules
+- Reboot
+
+[Internal Storage]
+- Connect via SSH/SFTP
+- Restore Internal Storage files from backup
+
+[Play Store]
+- Open PS
+- Tap Profile Picture, Manage Apps & Devices
+- Manage
+- Not Installed
+- Select any apps required to install
+
+[Apps setup]
+- Run setup_phone_settings.ps1
+
+[Homescreen & app drawer]
+- Place all apps in respective positions
+-- [Gallery, Clock, Authenticator, Spotify, QR & Barcode Scanner]
+-- [G Contacts, Camera, Firefox, Play Store, Loyalty Card Keychain]
+-- [G Calendar, Telegram, Kiwi Browser, G Calculator, Rabobank]
+-- [Netflix, ..., MultiTankCardNext, ... , Keepass2Android]
+-- [Work Log, Gmail, Outlook, Outlook Firefox Work Shortcut, Digid]
+-- [Ted, G Maps, G Translate, My Files, Dolby On]
+-- [Dialer, SMS, Settings, Chrome, Whatsapp]
+
+[Secrets]
+- Settings
+- Biometrics
+- Add fingerprints
+- Go to settings
+- Lockscreen
+- Screen lock type
+- Enable: Fingerprints
+- Open Keepass2Android
+- Open file
+- Google Drive KP2A, Allow
+- Open file
+- Input password
+- Deselect Enable QuickUnlock
+- Unlock
+- Biometrics?: Yes
+- enable Full Biometric Unlock
+- back
+- Autofill: Do not show again
+- Allow notifications
+
+[K2A config]
+- Burger menu
+- Settings
+- App
+- QuickUnlock
+- Disable: Enable QuickUnlock by default
+
+
+[Wallpaper]
+- Hold on empty home screen space
+- Wallpapaer and style
+- Change wallpapers
+- Gallery
+- Albums
+- Select image
+- Both Lock screen and Home screen
+
+[Rabobank]
+- Open app on other phone, log in
+- Instellingen,
+- Toegang, veiligheid en privacy
+- Geregistreerde toestellen
+- QR-code
+- Scan with new phone, follow instructions, login
+- Instellingen
+- Meldingen, Alerts
+- Turn on: Pushberichten op dit toestel, Aanzetten
+- Turn on notifications for Rabobank
+
+[Dialer]
+- Settings
+- Call background
+- Background
+- +
+- Albums
+- Set as call background
+- Call alerts and ringtone
+- Disable: Allow alarm/notification sounds in calls
+- Call vibration: Max intensity, Basic
+- Ringtone:
+-- +
+-- Pick sound, Done
+- Disable: Play sound for keypad taps
+- Disable: Vibrate for keypad tabs
+- Other call settings:
+-- Disable: Roaming assistance
+
+[Wireless & Tethering]
+- Settings
+- Connections
+- 'Mobile hotspot and Tethering'
+- Tap 'Mobile Hotspot' text
+- Change network name and password
+- Go back
+- Data Usage
+- Billing cycle and data warning
+- Data Warning: 20.00GB
+
+[DnD]
+- Settings
+- Notifications
+- Do not disturb
+- Calls and messages
+- Calls: All
+- Messages: None
+- Back
+- Alarms and sounds
+- Allow: alarms, Media sound, Calendar events
+
+[Dolby]
+- Settings
+- Sounds and vibration
+- Sound quality and effects
+- Enable: Dolby Atom, Dolby Atmos for gaming
+- Equalizer: Normal
+- Back
+- Separate App Sound
+- Turn on now
+- Add app, select flitsmeister, audio device: Phone
+
+[Battery]
+- Settings
+- Battery
+- Protect battery
+- Background usage limits
+- Enable: Put unused apps to sleep
+- Never auto sleeping apps: AFWall+, Automate, BCR, Echo, Flitsmeister, Magisk
+- Deep sleeping apps: Authenticator Pro, Calculator, Chrome, Discord, Lidl Plus, Loyalty Card Keychain, LSC Smart Connect, Momo, MTC Next, MyAthlon, Netflix, Odido, OVPay, Pocket Paint, QR & Barcode Scanner, Reolink, Teams, Translate, Work Log, Work Log Key, IKEA, Digid, Grocy, KRK Audio Tools, Kiwi Browser, Separated Apps, YASNAC, WiFiAnalyzer, USB Gadget Tool, Auto Blocker, Firefox
+- Sleeping Apps: Berichtenbox, Rabobank
+
+[Home Screen]
+- Settings
+- Home screen
+- Lock home screen layout
+
+[Lock screen]
+- Settings
+- Lock screen
+- Edit lock screen
+- Add contact info at bottom
+- Done
+- Always on Display
+- Enable: Show music information
+- Clock Style: ... > Clock with calendar
+
+[Security and privacy]
+- Settings
+- Security and Privacy
+- More privacy settings
+- Disable: Android personalization service (content_capture_enabled=0)
+- Back
+- More security settings
+- Trust agents
+- Disable extended unlock
+
+[Safety & Emergency]
+- Settings
+- Safety and emergency
+- Medical info
+- Put in medical info
+- Disable earthquake warnings as they don't work in NL anyway
+
+[General management]
+- Settings
+- General management
+- Language
+- Add: English (Netherlands) + Set as default, Nederlands, Polski
+- Highlight English (US) and remove it
+- Keyboard List and Default
+
+[SwiftKey Keyboard]
+- Settings
+- General management
+- Microsoft SwiftKey Keyboard settings
+- Log in, sign in with Google
+- No, don't agree to share
+- Languages: Dutch, English (US), Polish
+- Themes > Yours > Holo
+- Typing
+-- Disable: Autocorrect, Quick perdiod, Auto space,
+-- Enable: Auto capitalize, Cursor control, Quick delete
+- Emoji: Disable ALL
+- Rich input: Disable ALL
+- Layout & Keys
+-- Enable: Number row, Long-press symbols, Accented characters
+-- Disable: Key pop-ups. Arrow keys, 
+-- Number position: Right (Number Pad)
+-- Perform resize as needed
+-- Long duration: 450ms
+- Sound & vibration
+-- Disable: use The Android default vibration
+- Privacy:
+-- Disable ALL

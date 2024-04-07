@@ -1,0 +1,3 @@
+Go to developer options and turn on allow screen overlay on settings. Then disable system notification for messenger bubbles. Turn off the overlay in developer options after.
+
+Took me a good minute to figure that one out, it was never a problem turning that off in the past but thankfully that method works. FYI if you leave chat head on screen for a long time you'll notice messenger background usage skyrockets. Prior to Android 12 this didn't occur but now it seems to be a noticeable battery drain.
