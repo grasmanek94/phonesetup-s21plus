@@ -59,6 +59,7 @@ function ADB-Change-Settings {
         lock_screen_medical_info_access=1 # allow medical info on lockscreen
         google_core_control=0 # idk what it is but google..
         package_verifier_user_consent=-1 # play protect disable
+        ota_disable_automatic_update=1 # with rooted ROM no auto updates anyway
     }
 
     $system = @{
@@ -149,6 +150,7 @@ function ADB-Change-Settings {
         add_info_today_schedule=1 # add calendar info to clock widget
 
         access_control_use=0 # ?
+        rcs_user_setting=0
     }
 
     $secure = @{
@@ -195,6 +197,10 @@ function ADB-Change-Settings {
         credential_service="com.google.android.gms/com.google.android.gms.auth.api.credentials.credman.service.PasswordAndPasskeyService"
         
         media_button_receiver="com.spotify.music/com.spotify.mediasession.mediasession.receiver.MediaButtonReceiver,0,1"
+
+        client_advanced_autohotspot_run=0
+        enabled_notification_listeners="com.llamalab.automate/com.llamalab.automate.AutomateNotificationListenerServiceKitKat:com.sec.android.app.launcher/com.android.launcher3.notification.NotificationListener"
+        show_zen_settings_suggestion=0
     }
 
     ADB-Change-Service -Key nfc -Value disable # turn off nfc

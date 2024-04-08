@@ -178,7 +178,8 @@ function Android-Package-Disable-All {
         'com.samsung.android.mapsagent',
         'com.samsung.android.app.updatecenter',
         'com.wssyncmldm', # no OTA on rooted devices anyway
-        'com.sec.android.soagent' # no OTA on rooted devices anyway
+        'com.sec.android.soagent', # no OTA on rooted devices anyway
+        'com.google.android.nearby.halfsheet' # Also Nearby Sharing?
     )
 
     $packages_to_disable | Foreach-Object {
