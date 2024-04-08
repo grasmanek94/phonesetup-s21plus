@@ -61,7 +61,7 @@
 - Hide the magisk App and do the steps
 - Settings
 - Enable zygisk
-- Configure DenyList (select all apps except apps that need root, including show system apps)
+- Configure DenyList (select all apps except apps that need root, including show system apps, do not add com.android.bluetooth/+agent or you will lose bluetooth pairings)
 - Superuser notification: None
 - Back
 - Modules
