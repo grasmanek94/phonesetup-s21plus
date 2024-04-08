@@ -58,6 +58,7 @@ function ADB-Change-Settings {
         # wfc_do_not_show_again_dt_emergency_location_dialog=1
         lock_screen_medical_info_access=1 # allow medical info on lockscreen
         google_core_control=0 # idk what it is but google..
+        package_verifier_user_consent=-1 # play protect disable
     }
 
     $system = @{

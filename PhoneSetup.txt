@@ -301,4 +301,33 @@
 - View Mode: Tile
 - Add all authenticator secrets
 
+[Google Contacts]
+- Tap profile
+- Settings
+- Default account for new contacts: my gmail
+
+[Camera]
+- Settings
+- Disable: Scan QR codes
+- Disable: Scan documents and text
+- Enable: Grid lines
+- Advanced video options
+- Enable: HEVC
+- Back
+- Shooting methods
+- Disable: Show palm
+
+[Play Store]
+- Open play store system settings
+- Don't allow change system settings
+- Disable notifications
+- Open play store
+- Profile icon
+- Play Protect
+- Settings icon
+- Disable ALL
+
+[Samsung Calendar]
+- In App Manager, disable notification permission (Uses permissions, POST_NOTIFICATION)
+
 

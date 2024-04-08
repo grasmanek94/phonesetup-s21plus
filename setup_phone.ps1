@@ -159,7 +159,7 @@ function Android-Package-Disable-All {
 	    'com.sec.android.app.setupwizardlegalprovider',
 	    'com.sec.android.cover.ledcover',
 	    'com.sec.android.desktopmode.uiservice',
-	    'com.sec.android.diagmonagent',
+	    # 'com.sec.android.diagmonagent', # seems to drain battery when disabled due to OS trying to start it
 	    'com.sec.android.easyMover',
 	    'com.sec.android.easyMover.Agent',
 	    'com.sec.android.easyonehand',
