@@ -210,3 +210,7 @@ function ADB-Change-Settings {
 }
 
 ADB-Change-Settings
+
+
+adb shell pm disable com.google.android.gms/.nearby.discovery.service.DiscoveryService
+adb shell pm disable com.google.android.gms/.nearby.sharing.DirectShareService
