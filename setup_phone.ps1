@@ -181,8 +181,14 @@ function Android-Package-Disable-All {
         'com.sec.android.soagent', # no OTA on rooted devices anyway
         'com.google.android.nearby.halfsheet', # Also Nearby Sharing?
         'com.sec.android.daemonapp', # weather
-        'com.samsung.sec.android.teegris.tui_service', # not used for consumer applications
-        'com.google.android.apps.turbo' # calculate remaining battery percentage based on usage? I saw no effect when disabling, ans samsung has their own service for it..
+        'com.samsung.sec.android.teegris.tui_service', # not used for consumer applications, although I think adb can't really disable this, magisk module needed
+        'com.google.android.apps.turbo', # calculate remaining battery percentage based on usage? I saw no effect when disabling, ans samsung has their own service for it..
+        'com.samsung.android.vtcamerasettings', # video call effects?
+        'com.samsung.android.visualars',
+        'com.samsung.android.knox.kpecore',
+        'com.google.android.adservices.api',
+        # 'com.google.mainline.adservices', # bricks phone? https://xdaforums.com/t/guide-how-to-fix-google-play-system-update-not-updating-or-being-stuck.4459903/post-88193383 # although maybe the user deleted another core service, others report it's fine
+        'com.sec.bcservice'
 
     )
 
