@@ -179,7 +179,11 @@ function Android-Package-Disable-All {
         'com.samsung.android.app.updatecenter',
         'com.wssyncmldm', # no OTA on rooted devices anyway
         'com.sec.android.soagent', # no OTA on rooted devices anyway
-        'com.google.android.nearby.halfsheet' # Also Nearby Sharing?
+        'com.google.android.nearby.halfsheet', # Also Nearby Sharing?
+        'com.sec.android.daemonapp', # weather
+        'com.samsung.sec.android.teegris.tui_service', # not used for consumer applications
+        'com.google.android.apps.turbo' # calculate remaining battery percentage based on usage? I saw no effect when disabling, ans samsung has their own service for it..
+
     )
 
     $packages_to_disable | Foreach-Object {
